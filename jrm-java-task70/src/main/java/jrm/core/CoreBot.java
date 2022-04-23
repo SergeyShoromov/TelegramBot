@@ -55,12 +55,12 @@ public class CoreBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "saffchen_plannerbot";
+        return "ЮЗЕР НЕЙМ";
     }
 
     @Override
     public String getBotToken() {
-        return "5331350506:AAF7W4tDplJZp_MvQd-3PCV_GlBsA6K743Q";
+        return "ТОКЕН";
     }
 
     private <T extends BotApiMethod> void executeMessage(T sendMessage) {
