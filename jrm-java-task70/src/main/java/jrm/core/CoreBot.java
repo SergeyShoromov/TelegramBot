@@ -43,9 +43,10 @@ public class CoreBot extends TelegramLongPollingBot {
             }
         }
         if (update.hasCallbackQuery()) {
-            String instruction = "Бот для формирования дел на день. Чтобы воспользоваться ботом следуйте его инструкциям";
+            String instruction = "Бот для формирования дел на день. Чтобы воспользоваться ботом нажмите кнопку "+
+                    "\"Начать планирование\" \nи следуйте инструкциям.";
             String callDate = update.getCallbackQuery().getData();
-            switch (callDate.toLowerCase()) {
+            switch (callDate) {
                 case VarConstant.YES:
                     EditMessageText text = sendMessageOperationService.createEditMessage(update, instruction);
                     executeMessage(text);

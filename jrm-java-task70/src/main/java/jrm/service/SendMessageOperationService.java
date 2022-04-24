@@ -16,7 +16,7 @@ public class SendMessageOperationService {
     private final String GREETING_MESSAGE = "Привет, приступим к планированию";
     private final String PLANNING_MESSAGE = "Вводите дела, после планирования нажмите конпку \"Закончить планирование\"";
     private final String END_PLANNING_MESSAGE = "Планирование окончено, для просмотра нажмите кнопку \"Показать дела\"";
-    private final String INSTRUCTION = "Прочтете краткую инструкцию?";
+    private final String INSTRUCTION = "Хотите ознакомиться с инструкцией?";
     private final ButtonsService buttonsService = new ButtonsService();
 
     public SendMessage createGreetingInformation(Update update) {
@@ -59,17 +59,17 @@ public class SendMessageOperationService {
 
     public SendMessage createInstructionMessage(Update update) {
         SendMessage sendMessage = createSimpleMessage(update, INSTRUCTION);
-        InlineKeyboardMarkup replyKeyboardMarkup =
+        InlineKeyboardMarkup keyboardMarkup =
                 buttonsService.setInlineKeyMarkup(buttonsService.createInlineButton(VarConstant.YES));
-        sendMessage.setReplyMarkup(replyKeyboardMarkup);
+        sendMessage.setReplyMarkup(keyboardMarkup);
         return sendMessage;
     }
 
     public EditMessageText createEditMessage(Update update, String instruction) {
         EditMessageText editMessageText = new EditMessageText();
         long mesId = update.getCallbackQuery().getMessage().getMessageId();
-        long chatIdId = update.getCallbackQuery().getMessage().getChatId();
-        editMessageText.setChatId(String.valueOf(chatIdId));
+        long chatId = update.getCallbackQuery().getMessage().getChatId();
+        editMessageText.setChatId(String.valueOf(chatId));
         editMessageText.setMessageId(toIntExact(mesId));
         editMessageText.setText(instruction);
         return editMessageText;
