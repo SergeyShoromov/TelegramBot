@@ -68,8 +68,8 @@ public class SendMessageOperationService {
     public EditMessageText createEditMessage(Update update, String instruction) {
         EditMessageText editMessageText = new EditMessageText();
         long mesId = update.getCallbackQuery().getMessage().getMessageId();
-        long chatId = update.getCallbackQuery().getMessage().getChatId();
-        editMessageText.setChatId(String.valueOf(chatId));
+        long chatIdId = update.getCallbackQuery().getMessage().getChatId();
+        editMessageText.setChatId(String.valueOf(chatIdId));
         editMessageText.setMessageId(toIntExact(mesId));
         editMessageText.setText(instruction);
         return editMessageText;
