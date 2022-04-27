@@ -7,7 +7,7 @@ import jrm.core.CoreBot;
 
 public class RunApp {
     public static void main(String[] args) {
-        TelegramBotsApi botsApi = null;
+        TelegramBotsApi botsApi;
         try {
             botsApi = new TelegramBotsApi(DefaultBotSession.class);
             botsApi.registerBot(new CoreBot());

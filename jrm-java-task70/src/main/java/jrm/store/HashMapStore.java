@@ -19,7 +19,7 @@ public class HashMapStore implements BaseStore {
             alreadyExistDeals.add(deal);
             localStore.put(key, alreadyExistDeals);
         } else {
-            localStore.put(key, asList(deal));
+            localStore.put(key, List.of(deal));
         }
     }
 
