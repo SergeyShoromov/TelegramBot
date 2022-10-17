@@ -13,10 +13,10 @@ import static java.lang.Math.toIntExact;
 import static java.util.Arrays.asList;
 
 public class SendMessageOperationService {
-    private final String GREETING_MESSAGE = "Привет, приступим к планированию";
-    private final String PLANNING_MESSAGE = "Вводите дела, после планирования нажмите конпку \"Закончить планирование\"";
-    private final String END_PLANNING_MESSAGE = "Планирование окончено, для просмотра нажмите кнопку \"Показать дела\"";
-    private final String INSTRUCTION = "Хотите ознакомиться с инструкцией?";
+    private final String GREETING_MESSAGE = "Здарова, Бандит";
+    private final String PLANNING_MESSAGE = "Введи какую-нибудь хуйню (но не жесткую) \"Закончить планирование\"";
+    private final String END_PLANNING_MESSAGE = "Чекай какую дрочь ты ебнул \"Показать дела\"";
+    private final String INSTRUCTION = "Для тупых повторю еще раз";
     private final ButtonsService buttonsService = new ButtonsService();
 
     public SendMessage createGreetingInformation(Update update) {
